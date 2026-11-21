@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Para mi papita 💜</title>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg1:#120726;--bg2:#2a0f55;--lil:#c9a7ff;--pink:#ff9fd2;--gold:#ffe2a8;--txt:#f4ecff}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font-family:'Quicksand',system-ui,sans-serif;color:var(--txt);background:linear-gradient(180deg,var(--bg1),var(--bg2) 55%,#3b1470);min-height:100vh;overflow-x:hidden;line-height:1.8}
+canvas{position:fixed;inset:0;z-index:0;pointer-events:none}
+section{position:relative;z-index:1;max-width:760px;margin:0 auto;padding:70px 22px;text-align:center}
+h1,h2{font-family:'Dancing Script',cursive,serif;color:var(--gold);font-weight:600}
+h1{font-size:clamp(2.6rem,10vw,4.6rem);line-height:1.15;text-shadow:0 0 24px #b07cff}
+h2{font-size:clamp(2rem,7vw,3rem);margin-bottom:20px}
+.sub{color:var(--lil);letter-spacing:.2em;font-size:.85rem;text-transform:uppercase;margin-bottom:14px}
+.fade{opacity:0;transform:translateY(24px);transition:all 1s}
+.fade.on{opacity:1;transform:none}
+.cd{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:26px}
+.cd div{background:#ffffff14;border:1px solid #c9a7ff55;border-radius:16px;padding:10px 14px;min-width:68px}
+.cd b{display:block;font-size:1.6rem;color:var(--pink)}
+.cd small{font-size:.7rem;color:var(--lil)}
+.row{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:26px 0}
+.row button{background:#ffffff10;border:1px solid #c9a7ff44;border-radius:18px;padding:8px 4px;cursor:pointer;color:var(--txt);font:inherit;font-size:.8rem;transition:.3s}
+.row button:hover,.row button.sel{background:#b07cff44;transform:translateY(-4px) scale(1.05)}
+.row svg{width:100%;max-width:84px;display:block;margin:0 auto 4px;animation:bob 3s ease-in-out infinite}
+.row button:nth-child(even) svg{animation-delay:-1.5s}
+@keyframes bob{50%{transform:translateY(-6px)}}
+#msg{min-height:130px;background:#ffffff12;border:1px solid #ffe2a855;border-radius:22px;padding:22px;font-size:1.05rem}
+#msg b{font-family:'Dancing Script',cursive;font-size:1.7rem;color:var(--gold);display:block}
+.card{background:#ffffff12;border:1px solid #c9a7ff44;border-radius:26px;padding:30px 24px;text-align:left;box-shadow:0 0 40px #7b3fe433}
+.card p{margin-bottom:16px}
+.sign{font-family:'Dancing Script',cursive;font-size:1.8rem;color:var(--pink);text-align:right}
+.big{font-family:'Dancing Script',cursive;font-size:clamp(1.8rem,7vw,2.6rem);color:var(--pink);line-height:1.4;text-shadow:0 0 18px #ff6fb866}
+.pray{border-color:#ffe2a866;background:#ffe2a810}
+footer{position:relative;z-index:1;text-align:center;padding:30px;color:var(--lil);font-size:.85rem}
+</style>
+</head>
+<body>
+<canvas id="c"></canvas>
+
+<section>
+  <p class="sub">보라해 · Borahae</p>
+  <h1>Para mi papita 💜</h1>
+  <p style="margin-top:16px">Hecho solo para ti, con todo mi corazón.</p>
+  <div class="cd" id="cd"></div>
+  <p style="margin-top:10px;font-size:.85rem;color:var(--lil)">…y contando, hablándote desde el 11 de junio de 2026</p>
+</section>
+
+<section class="fade">
+  <h2>Tu pequeño equipo</h2>
+  <p>Ellos te acompañan hoy. Tócalos, cada uno trae un mensaje para ti.</p>
+  <div class="row" id="row"></div>
+  <div id="msg"><b>💜</b>Escoge a alguien de arriba…</div>
+</section>
+
+<section class="fade">
+  <h2>Mi papita, léeme un ratito</h2>
+  <div class="card">
+    <p>Papita, sé que este mes que empieza viene pesado, y quería que antes de arrancar tuvieras algo que te recordara una cosa muy simple: <b>no estás sola</b>. Me tienes a mí. Para lo que sea, a la hora que sea, estoy aquí.</p>
+    <p>Te amo. Te amo demasiado, de verdad y de corazón, no por lo que haces ni por cómo te va, sino por quien eres. Y te veo: veo cuánto te esfuerzas, cuánto aguantas y cómo sigues de pie aunque estés cansada.</p>
+    <p>Quiero decirte esto con toda la honestidad que tengo: perdón por las veces que mis acciones y mis palabras te hicieron sentir mal. Me duele muchísimo y quiero ser mejor, para que a mi lado siempre te sientas segura, escuchada y querida.</p>
+    <p>Y también quiero que lo recuerdes cada mañana: <b>tú puedes con todo</b>. Mi papita puede con todo. Los días largos, las prisas, las dudas, todo. Y cuando sientas que ya no, respira, búscame y yo te recuerdo lo fuerte que eres.</p>
+    <p class="sign">Tu Emanuel 💜</p>
+  </div>
+</section>
+
+<section class="fade">
+  <p class="big">Mi papita<br>puede con todo.</p>
+  <p style="margin-top:18px;color:var(--lil)">Un día a la vez, juntos. 💜</p>
+</section>
+
+<section class="fade">
+  <h2>Una oración para ti 🙏</h2>
+  <div class="card pray">
+    <p>Dios mío, hoy pongo a Andrea en tus manos. Gracias por su vida, por su corazón tan hermoso y por dejarme acompañarla en este camino.</p>
+    <p>Señor, cuídala en todo momento. Cuando salga de casa y cuando vuelva, en el trabajo, en el cansancio y en los días largos. Rodéala de personas buenas y que su esfuerzo sea visto y recompensado.</p>
+    <p>Dale fuerzas cuando sienta que ya no puede, paz cuando la mente se le llene de preocupaciones y calma cuando el día se ponga pesado. Que no le falte ánimo ni alegría, y que sepa que no está sola.</p>
+    <p>Bendícela en todo lo que haga. Abre puertas para ella, guarda su salud, su corazón y sus sueños. Y cuando llore o dude, tenla en tus brazos, Padre, acompáñala y recuérdale que ella es amada y que contigo puede con todo.</p>
+    <p>Ayúdame también a mí a ser un apoyo, un hombre que cuide, escuche y ame mejor. Que nuestra unión siga creciendo con fe, respeto y paciencia.</p>
+    <p>Que tu paz la cubra esta noche y todos los días de este mes. En tu nombre lo pedimos. Amén. 🤍</p>
+  </div>
+</section>
+
+<footer>Con todo mi amor, para mi papita · 보라해 💜</footer>
+
+<script>
+/* Personajes (versión simplificada en SVG, estilo fan-art) */
+const eyes=(c='#222')=>`<circle cx="38" cy="54" r="4" fill="${c}"/><circle cx="62" cy="54" r="4" fill="${c}"/><path d="M44 66q6 6 12 0" stroke="${c}" stroke-width="2.5" fill="none" stroke-linecap="round"/>`;
+const bl='<circle cx="30" cy="64" r="5" fill="#ff9fb8" opacity=".6"/><circle cx="70" cy="64" r="5" fill="#ff9fb8" opacity=".6"/>';
+const S=x=>`<svg viewBox="0 0 100 100">${x}</svg>`;
+const CH=[
+{n:'Koya',m:'Papita, descansa tranquila: aunque el día sea largo, hoy duermes sabiendo que alguien te quiere muchísimo. Cierra los ojitos, que mañana puedes con todo.',
+ s:S('<circle cx="20" cy="24" r="16" fill="#9bd6f5" stroke="#111" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><circle cx="80" cy="24" r="16" fill="#9bd6f5" stroke="#111" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><circle cx="20" cy="24" r="8" fill="#fff"/><circle cx="80" cy="24" r="8" fill="#fff"/><path d="M32 70q-6 16 0 24h36q6-8 0-24z" fill="#9bd6f5" stroke="#111" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><ellipse cx="50" cy="84" rx="9" ry="11" fill="#fff"/><ellipse cx="50" cy="44" rx="40" ry="31" fill="#9bd6f5" stroke="#111" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><ellipse cx="50" cy="46" rx="8" ry="11" fill="#7a62b0" stroke="#111" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><path d="M28 45h12M60 45h12" stroke="#111" stroke-width="3" stroke-linecap="round"/><path d="M43 64q7 6 14 0" stroke="#111" stroke-width="3" fill="none" stroke-linecap="round"/>')},
+{n:'RJ',m:'Cuando te sientas cansada, abrígate de mi cariño como con una bufanda. Estoy contigo, siempre, en cada paso de este mes.',
+ s:S('<g fill="#fff" stroke="#111" stroke-width="7"><circle cx="30" cy="30" r="12"/><circle cx="50" cy="22" r="14"/><circle cx="70" cy="30" r="12"/><circle cx="50" cy="38" r="26"/><circle cx="27" cy="46" r="10"/><circle cx="73" cy="46" r="10"/><circle cx="50" cy="78" r="18"/><circle cx="35" cy="74" r="12"/><circle cx="65" cy="74" r="12"/></g><g fill="#fff"><circle cx="30" cy="30" r="12"/><circle cx="50" cy="22" r="14"/><circle cx="70" cy="30" r="12"/><circle cx="50" cy="38" r="26"/><circle cx="27" cy="46" r="10"/><circle cx="73" cy="46" r="10"/><circle cx="50" cy="78" r="18"/><circle cx="35" cy="74" r="12"/><circle cx="65" cy="74" r="12"/></g><path d="M30 58h40l-8 10H38z" fill="#f2711c" stroke="#111" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><ellipse cx="42" cy="94" rx="7" ry="4" fill="#8a5a2b" stroke="#111" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><ellipse cx="58" cy="94" rx="7" ry="4" fill="#8a5a2b" stroke="#111" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><ellipse cx="50" cy="74" rx="7" ry="6" fill="#fff" stroke="#111" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><ellipse cx="50" cy="73" rx="3" ry="3" fill="#8a5a2b"/><circle cx="41" cy="40" r="2.6" fill="#111"/><circle cx="59" cy="40" r="2.6" fill="#111"/><circle cx="34" cy="46" r="4" fill="#f7a8b8" opacity=".8"/><circle cx="66" cy="46" r="4" fill="#f7a8b8" opacity=".8"/><path d="M46 46q4 4 8 0" stroke="#111" stroke-width="2" fill="none" stroke-linecap="round"/>')},
+{n:'Shooky',m:'Eres dulce, eres fuerte y eres única. Una galletita con un corazón enorme. Nadie en el mundo lo hace como tú, y yo te amo demasiado.',
+ s:S('<ellipse cx="38" cy="90" rx="7" ry="9" fill="#7a3f1c" stroke="#111" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><ellipse cx="62" cy="90" rx="7" ry="9" fill="#7a3f1c" stroke="#111" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><ellipse cx="10" cy="52" rx="7" ry="11" fill="#7a3f1c" stroke="#111" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" transform="rotate(-25 10 52)"/><ellipse cx="90" cy="52" rx="7" ry="11" fill="#7a3f1c" stroke="#111" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" transform="rotate(25 90 52)"/><path d="M12 62C12 28 30 14 50 14s38 14 38 48c0 18-18 24-38 24S12 80 12 62z" fill="#c4864f" stroke="#111" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><path d="M30 30l14 9M58 36h12" stroke="#111" stroke-width="4" stroke-linecap="round"/><circle cx="38" cy="48" r="5" fill="#111"/><circle cx="64" cy="48" r="5" fill="#111"/><path d="M24 57h52q0 22-26 22T24 57z" fill="#6b3318" stroke="#111" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><rect x="45" y="58" width="10" height="7" fill="#fff"/>')},
+{n:'Mang',m:'Si hoy el trabajo te cansó, baila un poquito, sacude el estrés y sonríe. Tienes más fuerza de la que crees, mi papita.',
+ s:S('<ellipse cx="24" cy="20" rx="13" ry="17" fill="#7fd0f7" stroke="#111" stroke-width="3" stroke-linejoin="round" transform="rotate(-14 24 20)"/><ellipse cx="76" cy="20" rx="13" ry="17" fill="#7fd0f7" stroke="#111" stroke-width="3" stroke-linejoin="round" transform="rotate(14 76 20)"/><ellipse cx="27" cy="24" rx="5" ry="10" fill="#d9b3f2" transform="rotate(-14 27 24)"/><ellipse cx="73" cy="24" rx="5" ry="10" fill="#d9b3f2" transform="rotate(14 73 24)"/><path d="M32 70h36v24H54V82h-8v12H32z" fill="#d9b3f2" stroke="#111" stroke-width="3" stroke-linejoin="round"/><path d="M36 70h28L50 84z" fill="#7fd0f7" stroke="#111" stroke-width="3" stroke-linejoin="round"/><ellipse cx="50" cy="44" rx="38" ry="30" fill="#d9b3f2" stroke="#111" stroke-width="3" stroke-linejoin="round"/><path d="M50 28c-10-8-28-4-28 12 0 14 12 22 28 22s28-8 28-22c0-16-18-20-28-12z" fill="#fff"/><circle cx="27" cy="52" r="6" fill="#f5b3e0"/><circle cx="73" cy="52" r="6" fill="#f5b3e0"/><circle cx="38" cy="43" r="3.6" fill="#111"/><circle cx="62" cy="43" r="3.6" fill="#111"/><path d="M46 49h8l-4 4z" fill="#111"/><path d="M42 56q4 4 8 0q4 4 8 0" stroke="#111" stroke-width="2.2" fill="none" stroke-linecap="round"/>')},
+{n:'Chimmy',m:'Aquí estoy para ti, como un perrito fiel: para escucharte, abrazarte y recordarte lo mucho que vales. No estás sola, nunca.',
+ s:S('<path d="M20 28q-16 6-10 34q10 6 14-6z" fill="#111" stroke="#111" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><path d="M80 28q16 6 10 34q-10 6-14-6z" fill="#111" stroke="#111" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><path d="M30 70q-5 12 0 24h40q5-12 0-24z" fill="#ffd900" stroke="#111" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><ellipse cx="24" cy="84" rx="6" ry="9" fill="#ffd900" stroke="#111" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><ellipse cx="76" cy="84" rx="6" ry="9" fill="#ffd900" stroke="#111" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><ellipse cx="24" cy="92" rx="5" ry="4" fill="#fff" stroke="#111" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><ellipse cx="76" cy="92" rx="5" ry="4" fill="#fff" stroke="#111" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><path d="M45 72v8M55 72v8" stroke="#f0763a" stroke-width="2.5"/><circle cx="45" cy="82" r="2.5" fill="#f0763a"/><circle cx="55" cy="82" r="2.5" fill="#f0763a"/><ellipse cx="50" cy="40" rx="37" ry="34" fill="#ffd900" stroke="#111" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><ellipse cx="50" cy="43" rx="28" ry="25" fill="#fff" stroke="#111" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><circle cx="41" cy="38" r="2.5" fill="#111"/><circle cx="59" cy="38" r="2.5" fill="#111"/><ellipse cx="50" cy="46" rx="4.5" ry="3" fill="#111"/><path d="M44 54h12" stroke="#111" stroke-width="2" stroke-linecap="round"/><path d="M48 54q2 8 4 0z" fill="#f08aa0" stroke="#111" stroke-width="1.5"/>')},
+{n:'Tata',m:'Eres de otro planeta, de las que brillan sin darse cuenta. Cada día que pasa, te admiro más. Sigue brillando, papita.',
+ s:S('<path d="M12 90q-4-8 6-12l10 8z" fill="#ffd84a" stroke="#111" stroke-width="3" stroke-linejoin="round"/><path d="M30 72q-8 14 2 22h36q10-8 2-22z" fill="#6f83d9" stroke="#111" stroke-width="3" stroke-linejoin="round"/><ellipse cx="30" cy="84" rx="7" ry="6" fill="#6f83d9" stroke="#111" stroke-width="3" stroke-linejoin="round"/><ellipse cx="70" cy="84" rx="7" ry="6" fill="#6f83d9" stroke="#111" stroke-width="3" stroke-linejoin="round"/><path d="M50 74C6 48 6 6 31 6c11 0 19 6 19 15 0-9 8-15 19-15 25 0 25 42-19 68z" fill="#f2505f" stroke="#111" stroke-width="3" stroke-linejoin="round"/><ellipse cx="25" cy="22" rx="6" ry="3.5" fill="#fff" opacity=".35" transform="rotate(-30 25 22)"/><circle cx="29" cy="46" r="6" fill="#e83a4a"/><circle cx="71" cy="46" r="6" fill="#e83a4a"/><circle cx="39" cy="38" r="3.2" fill="#111"/><circle cx="61" cy="38" r="3.2" fill="#111"/><path d="M41 47q9-5 18 0q-2 9-9 9t-9-9z" fill="#ffd84a" stroke="#111" stroke-width="3" stroke-linejoin="round"/><path d="M45 50q5 3 10 0" stroke="#111" stroke-width="2" fill="none" stroke-linecap="round"/>')},
+{n:'Cooky',m:'¡Ánimos, papita! Un paso a la vez, que lo estás haciendo mejor de lo que crees. Yo estoy muy orgulloso de ti.',
+ s:S('<ellipse cx="34" cy="18" rx="12" ry="19" fill="#f8a8cc" stroke="#111" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><ellipse cx="34" cy="20" rx="5" ry="12" fill="#fff3c2"/><path d="M30 76q-4 10 0 18h14v-8h12v8h14q4-8 0-18z" fill="#f8a8cc" stroke="#111" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><ellipse cx="86" cy="62" rx="6" ry="13" fill="#f8a8cc" stroke="#111" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" transform="rotate(25 86 62)"/><ellipse cx="50" cy="52" rx="35" ry="27" fill="#f8a8cc" stroke="#111" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><circle cx="72" cy="24" r="13" fill="#f8a8cc" stroke="#111" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><path d="M68 22q6-4 8 2" stroke="#111" stroke-width="2.5" fill="none"/><path d="M30 40l14 6M70 40l-14 6" stroke="#111" stroke-width="3.5" stroke-linecap="round"/><circle cx="38" cy="50" r="3.2" fill="#111"/><circle cx="62" cy="50" r="3.2" fill="#111"/><circle cx="27" cy="58" r="4" fill="#f27aa8" opacity=".7"/><circle cx="73" cy="58" r="4" fill="#f27aa8" opacity=".7"/><ellipse cx="50" cy="56" rx="4" ry="3" fill="#111"/><path d="M41 62q9 14 18 0z" fill="#e8344e" stroke="#111" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>')},
+{n:'Van',m:'Corazón al 100%, batería cargada. Cuando la tuya baje, recárgala conmigo: te amo con todo lo que tengo.',
+ s:S('<defs><clipPath id="vc"><rect x="0" y="0" width="50" height="100"/></clipPath></defs><ellipse cx="86" cy="72" rx="5" ry="11" fill="#fff" stroke="#111" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><path d="M34 72h32v22q0 3-4 3h-6q-4 0-4-3V84h-4v10q0 3-4 3h-6q-4 0-4-3z" fill="#fff" stroke="#111" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><path d="M50 4l8 18c20 6 30 22 27 36-3 16-18 22-35 22S18 74 15 58C12 44 22 28 42 22z" fill="#fff" stroke="#111" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><g clip-path="url(#vc)"><path d="M34 72h32v22q0 3-4 3h-6q-4 0-4-3V84h-4v10q0 3-4 3h-6q-4 0-4-3z" fill="#8c8c8c" stroke="#111" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><path d="M50 4l8 18c20 6 30 22 27 36-3 16-18 22-35 22S18 74 15 58C12 44 22 28 42 22z" fill="#8c8c8c" stroke="#111" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/></g><ellipse cx="14" cy="66" rx="12" ry="6" fill="#8c8c8c" stroke="#111" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" transform="rotate(-35 14 66)"/><path d="M31 47l10 10M41 47l-10 10" stroke="#111" stroke-width="3" stroke-linecap="round"/><circle cx="66" cy="52" r="5" fill="#fff" stroke="#111" stroke-width="3"/><path d="M36 66h28" stroke="#111" stroke-width="3" stroke-linecap="round"/>')}
+];
+const row=document.getElementById('row'),msg=document.getElementById('msg');
+CH.forEach(c=>{const b=document.createElement('button');b.innerHTML=c.s+c.n;
+ b.onclick=()=>{document.querySelectorAll('.row button').forEach(x=>x.classList.remove('sel'));b.classList.add('sel');
+  msg.innerHTML='<b>'+c.n+' 💜</b>'+c.m};row.appendChild(b)});
+
+/* Contador desde el 11 de junio de 2026, 9:59 pm */
+const T0=new Date(2026,5,11,21,59,0),cd=document.getElementById('cd');
+function tick(){let n=new Date(),a=T0.getFullYear?0:0,
+ y=n.getFullYear()-T0.getFullYear(),m=n.getMonth()-T0.getMonth(),d=n.getDate()-T0.getDate(),
+ h=n.getHours()-T0.getHours(),mi=n.getMinutes()-T0.getMinutes(),s=n.getSeconds()-T0.getSeconds();
+ if(s<0){s+=60;mi--}if(mi<0){mi+=60;h--}if(h<0){h+=24;d--}
+ if(d<0){d+=new Date(n.getFullYear(),n.getMonth(),0).getDate();m--}if(m<0){m+=12;y--}
+ if(y<0){y=m=d=h=mi=s=0}
+ cd.innerHTML=[[y,'años'],[m,'meses'],[d,'días'],[h,'horas'],[mi,'min'],[s,'seg']].map(x=>`<div><b>${x[0]}</b><small>${x[1]}</small></div>`).join('')}
+tick();setInterval(tick,1000);
+
+/* Aparecer al hacer scroll */
+const io=new IntersectionObserver(e=>e.forEach(i=>i.isIntersecting&&i.target.classList.add('on')),{threshold:.15});
+document.querySelectorAll('.fade').forEach(x=>io.observe(x));
+
+/* Estrellas y corazones morados */
+const cv=document.getElementById('c'),g=cv.getContext('2d');let W,H;
+function rs(){W=cv.width=innerWidth;H=cv.height=innerHeight}rs();addEventListener('resize',rs);
+const st=Array.from({length:70},()=>({x:Math.random()*W,y:Math.random()*H,r:Math.random()*1.6+.3,p:Math.random()*6}));
+const hs=Array.from({length:16},()=>({x:Math.random()*W,y:Math.random()*H,s:Math.random()*10+8,v:Math.random()*.6+.25,c:Math.random()<.5?'#c9a7ff':'#ff9fd2'}));
+function loop(t){g.clearRect(0,0,W,H);
+ st.forEach(s=>{g.globalAlpha=.4+.6*Math.abs(Math.sin(t/1200+s.p));g.fillStyle='#fff';g.beginPath();g.arc(s.x,s.y,s.r,0,7);g.fill()});
+ g.globalAlpha=.55;hs.forEach(h=>{h.y-=h.v;if(h.y<-20){h.y=H+20;h.x=Math.random()*W}
+  g.fillStyle=h.c;g.font=h.s+'px serif';g.fillText('♥',h.x,h.y)});
+ requestAnimationFrame(loop)}
+requestAnimationFrame(loop);
+</script>
+</body>
+</html>
